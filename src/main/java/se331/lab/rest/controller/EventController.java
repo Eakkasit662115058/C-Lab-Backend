@@ -122,7 +122,7 @@ public class EventController {
         if (output != null) {
             return ResponseEntity.ok(output);
         }else{
-            throw   new ResponseStatusException(HttpStatus.NOT_FOUND,"The given id is not found");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The given id is not found");
         }
     }
 
