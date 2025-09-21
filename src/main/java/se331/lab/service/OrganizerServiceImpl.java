@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class OrganizerServicelmpl implements OrganizerService {
+public class OrganizerServiceImpl implements OrganizerService {
     final OrganizerDao organizerDao;
 
     @Override

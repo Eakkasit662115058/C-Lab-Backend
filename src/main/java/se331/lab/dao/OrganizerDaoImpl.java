@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class OrganizerDaolmpl implements OrganizerDao {
+public class OrganizerDaoImpl implements OrganizerDao {
     List<Organizer> organizerList;
 
     @PostConstruct
