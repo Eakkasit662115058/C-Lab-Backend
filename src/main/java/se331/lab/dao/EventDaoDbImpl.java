@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import se331.lab.entity.Event;
 import se331.lab.repository.EventRepository;
 
-import java.util.List;
 import org.springframework.data.domain.Page;
 
 @Repository

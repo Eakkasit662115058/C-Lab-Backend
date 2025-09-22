@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import se331.lab.dao.EventDao;
 import se331.lab.entity.Event;
-import java.util.List;
 import org.springframework.data.domain.Page;
 
 @Service

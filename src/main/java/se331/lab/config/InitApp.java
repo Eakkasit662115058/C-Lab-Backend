@@ -5,12 +5,15 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import se331.lab.entity.Event;
+import se331.lab.entity.Organizer;
 import se331.lab.repository.EventRepository;
+import se331.lab.repository.OrganizerRepository;
 
 @Component
 @RequiredArgsConstructor
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     final EventRepository eventRepository;
+    final OrganizerRepository organizerRepository;
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
@@ -50,5 +53,33 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("10.00am - 6.00 pm.")
                 .petAllowed(false)
                 .organizer("Chaing Mai Municipality").build());
+        organizerRepository.save(Organizer.builder()
+                .address("Meow Town")
+                .organizationName("Kat Laydee")
+                .build());
+        organizerRepository.save(Organizer.builder()
+                .address("Flora City")
+                .organizationName("Fern Pollin")
+                .build());
+
+        organizerRepository.save(Organizer.builder()
+                .address("Flora City")
+                .organizationName("Fern Pollin")
+                .build());
+
+        organizerRepository.save(Organizer.builder()
+                .address("Playa Del Carmen")
+                .organizationName("Carey Wales")
+                .build());
+
+        organizerRepository.save(Organizer.builder()
+                .address("Green Park Central")
+                .organizationName("EcoFuture Group")
+                .build());
+
+        organizerRepository.save(Organizer.builder()
+                .address("Nature Reserve Trail")
+                .organizationName("Camera Club Collective")
+                .build());
     }
 }
