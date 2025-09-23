@@ -24,7 +24,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .location("CAMT Building")
                 .date("3rd Sept")
                 .time("3.00-4.00 pm.")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("CAMT").build());
         eventRepository.save(Event.builder()
                 .category("Academic")
@@ -33,7 +33,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .location("CMU covention hall")
                 .date("21th Jan")
                 .time("8.00am-4.00 pm.")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("CMU").build());
         eventRepository.save(Event.builder()
                 .category("Cultural")
@@ -42,7 +42,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .location("Ping River")
                 .date("21th Nov")
                 .time("8.00-10.00 pm.")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("Chaing Mai").build());
         eventRepository.save(Event.builder()
                 .category("Cultural")
@@ -51,7 +51,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .location("Chiang Mai Moat")
                 .date("13th April")
                 .time("10.00am - 6.00 pm.")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("Chaing Mai Municipality").build());
         organizerRepository.save(Organizer.builder()
                 .address("Meow Town")
@@ -61,22 +61,18 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .address("Flora City")
                 .organizationName("Fern Pollin")
                 .build());
-
         organizerRepository.save(Organizer.builder()
                 .address("Flora City")
                 .organizationName("Fern Pollin")
                 .build());
-
         organizerRepository.save(Organizer.builder()
                 .address("Playa Del Carmen")
                 .organizationName("Carey Wales")
                 .build());
-
         organizerRepository.save(Organizer.builder()
                 .address("Green Park Central")
                 .organizationName("EcoFuture Group")
                 .build());
-
         organizerRepository.save(Organizer.builder()
                 .address("Nature Reserve Trail")
                 .organizationName("Camera Club Collective")

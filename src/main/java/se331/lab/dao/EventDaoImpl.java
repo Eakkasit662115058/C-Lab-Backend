@@ -27,7 +27,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Meow Town")
                 .date("January 28, 2022")
                 .time("12:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Kat Laydee")
                 .build());
 
@@ -39,7 +39,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Flora City")
                 .date("march 14, 2022")
                 .time("10:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Fern Pollin")
                 .build());
 
@@ -51,7 +51,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Flora City")
                 .date("March 14, 2022")
                 .time("10:00")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("Fern Pollin")
                 .build());
 
@@ -63,7 +63,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Playa Del Carmen")
                 .date("July 22, 2022")
                 .time("11:00")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("Carey Wales")
                 .build());
 
@@ -75,7 +75,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Green Park Central")
                 .date("August 24, 2025")
                 .time("09:00 AM")
-                .petAllowed(true)
+                .petsAllowed(true)
                 .organizer("EcoFuture Group")
                 .build());
 
@@ -87,7 +87,7 @@ public class EventDaoImpl implements EventDao {
                 .location("Nature Reserve Trail")
                 .date("September 15, 2025")
                 .time("08:30 AM")
-                .petAllowed(false)
+                .petsAllowed(false)
                 .organizer("Camera Club Collective")
                 .build());
     }
