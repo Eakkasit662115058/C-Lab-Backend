@@ -21,38 +21,32 @@ public class OrganizerDaoImpl implements OrganizerDao {
         organizerList = new ArrayList<>();
         organizerList.add(Organizer.builder()
                 .id(123L)
-                .address("Meow Town")
-                .organizationName("Kat Laydee")
+                .name("Kat Laydee")
                 .build());
 
         organizerList.add(Organizer.builder()
                 .id(456L)
-                .address("Flora City")
-                .organizationName("Fern Pollin")
+                .name("Fern Pollin")
                 .build());
 
         organizerList.add(Organizer.builder()
                 .id(4582797L)
-                .address("Flora City")
-                .organizationName("Fern Pollin")
+                .name("Fern Pollin")
                 .build());
 
         organizerList.add(Organizer.builder()
                 .id(8419988L)
-                .address("Playa Del Carmen")
-                .organizationName("Carey Wales")
+                .name("Carey Wales")
                 .build());
 
         organizerList.add(Organizer.builder()
                 .id(9238745L)
-                .address("Green Park Central")
-                .organizationName("EcoFuture Group")
+                .name("EcoFuture Group")
                 .build());
 
         organizerList.add(Organizer.builder()
                 .id(7293156L)
-                .address("Nature Reserve Trail")
-                .organizationName("Camera Club Collective")
+                .name("Camera Club Collective")
                 .build());
     }
 

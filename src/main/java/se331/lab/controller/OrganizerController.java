@@ -8,9 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import se331.lab.entity.Organizer;
-import se331.lab.service.OrganizerService;
 import org.springframework.data.domain.Page;
-
+import se331.lab.service.OrganizerService;
 
 
 @Controller

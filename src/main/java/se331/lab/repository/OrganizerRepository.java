@@ -6,5 +6,4 @@ import se331.lab.entity.Organizer;
 import java.util.List;
 
 public interface OrganizerRepository extends JpaRepository<Organizer,Long> {
-    List<Organizer> findAll();
 }
