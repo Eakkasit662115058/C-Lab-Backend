@@ -3,6 +3,8 @@ package se331.lab.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import se331.lab.entity.Organizer;
+import se331.lab.entity.Participant;
+
 
 import java.util.List;
 

@@ -2,8 +2,6 @@ package se331.lab.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import se331.lab.entity.Event;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,19 +1,16 @@
 package se331.lab.entity;
 
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class EventDTO {
+public class OrganizerOwnEventsDTO {
     Long id;
     String category;
     String title;
@@ -22,6 +19,5 @@ public class EventDTO {
     String date;
     String time;
     Boolean petsAllowed;
-    EventOrganizerDTO organizer;
-    List<EventParticipantDTO> participant;
+    List<Participant> participant;
 }

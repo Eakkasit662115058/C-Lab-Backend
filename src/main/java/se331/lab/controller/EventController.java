@@ -25,7 +25,7 @@ public class EventController {
         Page<Event> pageOutput = eventService.getEvents(perPage, page);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("x-total-count", String.valueOf(pageOutput.getTotalElements()));
-        return new ResponseEntity<>(LabMapper.INSTANCE.getEventDtoList(pageOutput.getContent()), responseHeaders, HttpStatus.OK);
+        return new ResponseEntity<>(LabMapper.INSTANCE.getEventDto(pageOutput.getContent()), responseHeaders, HttpStatus.OK);
     }
 
     @GetMapping("events/{id}")
@@ -45,3 +45,4 @@ public class EventController {
     }
 
 }
+

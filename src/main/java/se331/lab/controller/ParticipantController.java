@@ -4,15 +4,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import se331.lab.Util.LabMapper;
-import se331.lab.service.OrganizerService;
+import se331.lab.service.ParticipantService;
+
 
 @RestController
 @RequiredArgsConstructor
-public class OrganizerController {
-    final OrganizerService organizerService;
+public class ParticipantController {
+    final ParticipantService participantService;
 
-    @GetMapping("/organizers")
+    @GetMapping("/participants")
     ResponseEntity<?> getOrganizers() {
-        return ResponseEntity.ok(LabMapper.INSTANCE.getOrganizerDto(organizerService.getAllOrganizer()));
+        return ResponseEntity.ok(LabMapper.INSTANCE.getParticipantDto(participantService.getAllParticipant()));
     }
 }
