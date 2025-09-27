@@ -17,7 +17,7 @@ public class ParticipantServiceImpl implements ParticipantService {
     final ParticipantDao participantDao;
 
     @Override
-    public List<Participant> getAllParticipant(){
+    public List<Participant> getAllParticipants(){
         return participantDao.getParticipant(Pageable.unpaged()).getContent();
     }
 

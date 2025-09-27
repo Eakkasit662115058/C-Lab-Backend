@@ -7,7 +7,7 @@ import se331.lab.entity.Participant;
 import java.util.List;
 
 public interface ParticipantService {
-    List<Participant> getAllParticipant();
+    List<Participant> getAllParticipants();
 
     Page<Participant> getParticipant(Integer pageSize, Integer page);
 

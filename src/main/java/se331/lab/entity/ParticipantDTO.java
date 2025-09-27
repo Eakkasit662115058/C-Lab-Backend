@@ -13,5 +13,6 @@ import java.util.List;
 public class ParticipantDTO {
     Long id;
     String name;
+    String telNo;
     List<ParticipantEventHistoryDTO> eventHistory;
 }
