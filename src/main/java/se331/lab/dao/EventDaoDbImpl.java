@@ -3,6 +3,7 @@ package se331.lab.dao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import se331.lab.entity.Event;
 import se331.lab.repository.EventRepository;
@@ -34,5 +35,10 @@ public class EventDaoDbImpl implements EventDao{
     @Override
     public Event save(Event event){
         return eventRepository.save(event);
+    }
+
+    @Override
+    public Page<Event> getEvents(String title, Pageable pageable){
+        return eventRepository.findByTitle(title, pageable);
     }
 }
