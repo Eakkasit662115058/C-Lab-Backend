@@ -6,12 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
-import se331.lab.entity.Event;
-import se331.lab.entity.Organizer;
-import se331.lab.entity.Participant;
-import se331.lab.repository.EventRepository;
-import se331.lab.repository.OrganizerRepository;
-import se331.lab.repository.ParticipantRepository;
+import se331.lab.entity.*;
+import se331.lab.repository.*;
 
 import java.util.List;
 
@@ -20,6 +16,10 @@ import java.util.List;
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Autowired
     EventRepository eventRepository;
+    @Autowired
+    AuctionItemRepository auctionItemRepository;
+    @Autowired
+    BidRepository bidRepository;
     final OrganizerRepository organizerRepository;
     final ParticipantRepository participantRepository;
 
@@ -98,5 +98,156 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         participant2.getEventHistory().add(tempEvent);
         participant3.getEventHistory().add(tempEvent);
 
+        AuctionItem auctionItem1, auctionItem2, auctionItem3, auctionItem4, auctionItem5;
+        Bid bid1, bid2, bid3, bid4, bid5, bid6, bid7, bid8, bid9, bid10, bid11, bid12, bid13, bid14, bid15;
+
+        // Create Auction Item 1 - Vintage Painting
+        auctionItem1 = auctionItemRepository.save(AuctionItem.builder()
+                .description("Beautiful vintage oil painting from 19th century")
+                .type("Art")
+                .build());
+
+        // Bids for Auction Item 1
+        bid1 = bidRepository.save(Bid.builder()
+                .amount(1000)
+                .dateTime("2024-01-15 09:00:00")
+                .auctionItem(auctionItem1)
+                .build());
+
+        bid2 = bidRepository.save(Bid.builder()
+                .amount(1500)
+                .dateTime("2024-01-15 10:30:00")
+                .auctionItem(auctionItem1)
+                .build());
+
+        bid3 = bidRepository.save(Bid.builder()
+                .amount(2200)
+                .dateTime("2024-01-15 14:45:00")
+                .auctionItem(auctionItem1)
+                .build());
+
+        auctionItem1.getBidHistory().add(bid1);
+        auctionItem1.getBidHistory().add(bid2);
+        auctionItem1.getBidHistory().add(bid3);
+        auctionItem1.setSuccessfulBid(bid3); // Highest bid wins
+
+        // Create Auction Item 2 - Antique Watch
+        auctionItem2 = auctionItemRepository.save(AuctionItem.builder()
+                .description("Swiss antique pocket watch from 1920s")
+                .type("Collectibles")
+                .build());
+
+        // Bids for Auction Item 2
+        bid4 = bidRepository.save(Bid.builder()
+                .amount(800)
+                .dateTime("2024-01-16 11:00:00")
+                .auctionItem(auctionItem2)
+                .build());
+
+        bid5 = bidRepository.save(Bid.builder()
+                .amount(1200)
+                .dateTime("2024-01-16 13:20:00")
+                .auctionItem(auctionItem2)
+                .build());
+
+        bid6 = bidRepository.save(Bid.builder()
+                .amount(1800)
+                .dateTime("2024-01-16 16:10:00")
+                .auctionItem(auctionItem2)
+                .build());
+
+        auctionItem2.getBidHistory().add(bid4);
+        auctionItem2.getBidHistory().add(bid5);
+        auctionItem2.getBidHistory().add(bid6);
+        auctionItem2.setSuccessfulBid(bid6); // Highest bid wins
+
+        // Create Auction Item 3 - Classic Guitar
+        auctionItem3 = auctionItemRepository.save(AuctionItem.builder()
+                .description("1965 Gibson Les Paul Standard electric guitar")
+                .type("Musical Instruments")
+                .build());
+
+        // Bids for Auction Item 3
+        bid7 = bidRepository.save(Bid.builder()
+                .amount(3000)
+                .dateTime("2024-01-17 08:30:00")
+                .auctionItem(auctionItem3)
+                .build());
+
+        bid8 = bidRepository.save(Bid.builder()
+                .amount(4500)
+                .dateTime("2024-01-17 12:15:00")
+                .auctionItem(auctionItem3)
+                .build());
+
+        bid9 = bidRepository.save(Bid.builder()
+                .amount(6200)
+                .dateTime("2024-01-17 15:45:00")
+                .auctionItem(auctionItem3)
+                .build());
+
+        auctionItem3.getBidHistory().add(bid7);
+        auctionItem3.getBidHistory().add(bid8);
+        auctionItem3.getBidHistory().add(bid9);
+        auctionItem3.setSuccessfulBid(bid9); // Highest bid wins
+
+        // Create Auction Item 4 - Rare Book (no successful bid yet)
+        auctionItem4 = auctionItemRepository.save(AuctionItem.builder()
+                .description("First edition of 'To Kill a Mockingbird' by Harper Lee")
+                .type("Books")
+                .build());
+
+        // Bids for Auction Item 4
+        bid10 = bidRepository.save(Bid.builder()
+                .amount(500)
+                .dateTime("2024-01-18 09:00:00")
+                .auctionItem(auctionItem4)
+                .build());
+
+        bid11 = bidRepository.save(Bid.builder()
+                .amount(750)
+                .dateTime("2024-01-18 11:30:00")
+                .auctionItem(auctionItem4)
+                .build());
+
+        bid12 = bidRepository.save(Bid.builder()
+                .amount(950)
+                .dateTime("2024-01-18 14:20:00")
+                .auctionItem(auctionItem4)
+                .build());
+
+        auctionItem4.getBidHistory().add(bid10);
+        auctionItem4.getBidHistory().add(bid11);
+        auctionItem4.getBidHistory().add(bid12);
+        // No successful bid set - auction still ongoing
+
+        // Create Auction Item 5 - Vintage Car (no successful bid yet)
+        auctionItem5 = auctionItemRepository.save(AuctionItem.builder()
+                .description("1967 Ford Mustang Fastback in excellent condition")
+                .type("Vehicles")
+                .build());
+
+        // Bids for Auction Item 5
+        bid13 = bidRepository.save(Bid.builder()
+                .amount(15000)
+                .dateTime("2024-01-19 10:00:00")
+                .auctionItem(auctionItem5)
+                .build());
+
+        bid14 = bidRepository.save(Bid.builder()
+                .amount(18500)
+                .dateTime("2024-01-19 13:45:00")
+                .auctionItem(auctionItem5)
+                .build());
+
+        bid15 = bidRepository.save(Bid.builder()
+                .amount(22000)
+                .dateTime("2024-01-19 16:30:00")
+                .auctionItem(auctionItem5)
+                .build());
+
+        auctionItem5.getBidHistory().add(bid13);
+        auctionItem5.getBidHistory().add(bid14);
+        auctionItem5.getBidHistory().add(bid15);
     }
 }
