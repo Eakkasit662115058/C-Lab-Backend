@@ -16,4 +16,5 @@ public class AuctionItemDTO {
     String description;
     String type;
     List<AuctionItemBidHistoryDTO> bidHistory;
+    AuctionItemBidHistoryDTO successfulBid;
 }
