@@ -27,9 +27,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         Organizer org1, org2, org3;
-        org1 = organizerRepository.save(Organizer.builder().name("CAMT").build());
-        org2 = organizerRepository.save(Organizer.builder().name("CMU").build());
-        org3 = organizerRepository.save(Organizer.builder().name("Chiang Mai").build());
+        org1 = organizerRepository.save(Organizer.builder().name("CAMT").address("in CMU").build());
+        org2 = organizerRepository.save(Organizer.builder().name("CMU").address("in Chiang Mai").build());
+        org3 = organizerRepository.save(Organizer.builder().name("Chiang Mai").address("in Thailand").build());
 
         Participant participant1, participant2, participant3, participant4, participant5;
         participant1  = participantRepository.save(Participant.builder().name("Alice Johnson").telNo("081-234-5678").build());
@@ -46,6 +46,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .date("3rd Sept")
                 .time("3.00-4.00 pm.")
                 .petsAllowed(false)
+                .images(List.of("https://yrgjzefdlluvebeaiuaz.supabase.co/storage/v1/object/public/test/20251008202327845-Her%20Hyness.jpg"))
                 .build());
         tempEvent.setOrganizer(org1);
         org1.getOwnEvents().add(tempEvent);

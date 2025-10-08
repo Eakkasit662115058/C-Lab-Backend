@@ -19,4 +19,5 @@ public class ParticipantEventHistoryDTO {
     String date;
     String time;
     Boolean petsAllowed;
+    List<String> images;
 }

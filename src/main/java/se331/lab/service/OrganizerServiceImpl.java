@@ -1,5 +1,6 @@
 package se331.lab.service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -23,10 +24,19 @@ public class OrganizerServiceImpl implements OrganizerService {
     }
 
     @Override
-    public Page<Organizer> getOrganizer(Integer pageSize, Integer page) {
+    public Page<Organizer> getOrganizers(Integer pageSize, Integer page) {
         return organizerDao.getOrganizer(PageRequest.of(page, pageSize));
     }
 
+    @Override
+    public Organizer getOrganizer(Long id){
+        return organizerDao.getOrganizer(id);
+    }
 
+    @Override
+    @Transactional
+    public Organizer save(Organizer organizer) {
+        return organizerDao.save(organizer);
+    }
 
 }
