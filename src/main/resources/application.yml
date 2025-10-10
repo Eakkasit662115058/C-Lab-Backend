@@ -25,4 +25,11 @@ supabase:
     bucket: test
     region: ap-southeast-1
     accessKey: e18cdfb7a739f1f1142838a05c5e8090
-    secretKey: d09d5fd684b4b22e4498ebc8d69b69095eccdc3f4118ab73ae4d548ad1c3b22e
+    secretKey: d09d5fd684b4b22e4498ebc8d69b69095eccdc3f411s8ab73ae4d548ad1c3b22e
+application:
+  security:
+    jwt:
+      secret-key: b3eda24f568ac96d09192fac38aa2cc9a03a7fe73b7c1aceee69474dde6621515efafb65339c2394953410a454826b6d5a7bd2e248f66e556b9a760f608db5f9
+        expiration: 86400000 #8640000 # a day
+      refresh-token:
+        expiration: 604800000 #7 days
