@@ -11,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import se331.lab.security.token.Token;
+import se331.lab.entity.Organizer;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,6 +37,8 @@ public class User implements UserDetails {
   private String email;
   private String password;
   private Boolean enabled;
+  @OneToOne(mappedBy = "user")
+  Organizer organizer;
 
   @Enumerated(EnumType.STRING)
   @ElementCollection
