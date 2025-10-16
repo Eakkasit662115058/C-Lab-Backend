@@ -12,6 +12,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import se331.lab.Util.LabMapper;
+import se331.lab.entity.Organizer;
+import se331.lab.repository.OrganizerRepository;
 import se331.lab.security.config.JwtService;
 import se331.lab.security.token.Token;
 import se331.lab.security.token.TokenRepository;
@@ -27,6 +29,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AuthenticationService {
   private final UserRepository repository;
+  private final OrganizerRepository OrganizerRepository;
   private final TokenRepository tokenRepository;
   private final PasswordEncoder passwordEncoder;
   private final JwtService jwtService;
@@ -37,10 +40,19 @@ public class AuthenticationService {
             .firstname(request.getFirstname())
             .lastname(request.getLastname())
             .email(request.getEmail())
+            .username(request.getUsername())
             .password(passwordEncoder.encode(request.getPassword()))
             .roles(List.of(Role.ROLE_USER))
+            .enabled(true)
+            .build();
+    Organizer organizer = Organizer.builder()
+            .address(request.getOrgaddress())
+            .name(request.getOrgname())
             .build();
     var savedUser = repository.save(user);
+    var savedOrganizer = OrganizerRepository.save(organizer);
+    organizer.setUser(user);
+    user.setOrganizer(organizer);
     var jwtToken = jwtService.generateToken(user);
     var refreshToken = jwtService.generateRefreshToken(user);
     saveUserToken(savedUser, jwtToken);
